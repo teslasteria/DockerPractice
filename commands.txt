@@ -1,0 +1,132 @@
+175  sudo pacman -S docker
+  179  docker start
+  180  systemctl docker start
+  187  cat /etc/issue
+  188  sudo  docker container run --interactive --tty --rm ubuntu bash
+  189  sudo  mysql:latest
+  190  docker container run \\n --detach \\n --name mydb \\n -e MYSQL_ROOT_PASSWORD=my-secret-pw \\n mysql:latest
+  191  docker container run \\n --detach \\n --name mydb \\n -e MYSQL_ROOT_PASSWORD=my-secret-pw \\n sudo mysql:latest
+  192  sudo docker container run \\n --detach \\n --name mydb \\n -e MYSQL_ROOT_PASSWORD=my-secret-pw \\n mysql:latest
+  194  sudo  docker container logs mydb
+  195  sudo    docker container top mydb\n
+  196  sudo  docker exec -it mydb \\n mysql --user=root --password=$MYSQL_ROOT_PASSWORD --version
+  197  sudo  docker exec -it mydb sh
+  199  export DOCKERID=<teslasteria>
+  201  sudo export DOCKERID=<teslasteria>
+  206  sudo  docker container rm --force linux_tweet_app
+  207  history -n 10
+  208  history -man
+  210  cd Downloads
+  213  ls notes_app
+  214  rm -r notes_app
+  215  find tweaks
+  216  find tweet
+  217  cd | grep "tweet"
+  218  find / -type d -name "linux_tweet_app"
+  219  cd Programs/tor-browser
+  221  mv linux_tweet_app ~/Downloads
+  223  cd ~/Downloads
+  227  docker container run \\n
+  229  \n\n docker container run \\n --detach \\n --publish 80:80 \\n --name linux_tweet_app \\n --mount type=bind,source="$(pwd)",target=/usr/share/nginx/html \\n $DOCKERID/linux_tweet_app:1.0\n
+  230  sudo systemctl start docker.service\nsudo systemctl enable docker.service
+  231  sudo systemctl status docker.service
+  232  sudo docker container run \\n
+  233  sudo docker container ls -all\n
+  234  sudo docker images
+  236  sudo docker container run alpine hostname
+  237  sudo  docker container ls --all
+  239  mv linux_tweet_app ~/
+  243  cd linux_tweet_app
+  245  export DOCKERID="teslasteria"
+  247  echo $DOCKERID
+  248  sudo  docker image build --tag $DOCKERID/linux_tweet_app:1.0 .
+  249  sudo docker container rm --force alpine
+  250  sudo  docker container run \\n cp index-new.html index.html
+  252  cat index.html
+  254  nano index-new.html
+  256  sudo docker container logs
+  257  sudo docker container logs linux_tweet_app
+  258  sudo docker container run \\n--datach \\n--publish 80:80 \\n --name linux_tweet_app \\n --mount type=bind,source="$(pwd)",target=/usr/share/nginx/html \\n $DOCKERID/linux_tweet_app:1.0
+  259  sudo docker container run \\n--detach \\n--publish 80:80 \\n-- name linux_tweet_app \\n-- mount type=bind, source="$(pwd)", target=/usr/share/nginx/html \\n$DOCKERID/linux_tweet_app:1.0
+  260  sudo docker container run \\n> --detach \\n> --publish 80:80 \\n> -- name linux_tweet_app \\n> -- mount type=bind, source="$(pwd)", target=/usr/share/nginx/html \\n
+  261  sudo docker container run \
+  262  sudo docker container run \\n--detach \\n --publish 80:80 \\n --name linux_tweet_app \\n --mount type=bind,source="$(pwd)",target=/usr/share/nginx/html \\n $DOCKERID/linux_tweet_app:1.0
+  263  sudo  docker rm --force linux_tweet_app\n
+  264  sudo docker container run \\n --detach \\n --publish 80:80 \\n --name linux_tweet_app \\n $DOCKERID/linux_tweet_app:1.0
+  265  docker rm --force linux_tweet_app
+  266  sudo docker rm --force linux_tweet_app
+  267  sudo  docker image build --tag $DOCKERID/linux_tweet_app:2.0 .
+  269  sudo  docker container run \\n --detach \\n --publish 80:80 \\n --name linux_tweet_app \\n $DOCKERID/linux_tweet_app:2.0
+  270  sudo  docker image ls -f reference="$DOCKERID/*"
+  271  sudo  docker login
+  272  sudo  docker image push $DOCKERID/linux_tweet_app:1.0
+  273  sudo  docker image push $DOCKERID/linux_tweet_app:2.0
+  275  git clone https://github.com/ibnesayeed/linkextractor.git
+  277  git checkout demo
+  278  git checkout step0
+  279  tee
+  282  ./linkextractor.py http://example.com/
+  283  ls -l linkextractor.py
+  284  python3 linkextractor.py
+  285  git checkout step1
+  288  sudo docker image build -t linkextractor:step1 .
+  290  sudo \n\ndocker container run -it --rm linkextractor:step1 http://example.com/\n
+  292  git checkout step2
+  294  cat linkextractor.py
+  295  sudo docker image build -t linkextractor:step2 .
+  296  sudo docker ls
+  297  sudo docker image ls
+  298  sudo docker container run -it --rm linkextractor:step2 https://training.play-with-docker.com/
+  299  sudo docker container run -it --rm linkextractor:step1 https://training.play-with-docker.com/
+  300  git checkout step3
+  302  cat Dockerfile
+  303  cat main.py
+  304  sudo docker image build -t linkextractor:step3 .
+  305  sudo docker container run -d -p 5000:5000 --name=linkextractor linkextractor:step3\n
+  307  curl -i http://localhost:5000/api/http://example.com/
+  308  sudo docker container logs linkextractor
+  309  sudo docker container rm -f linkextractor
+  310  git checkout step4
+  312  cd linkextractor
+  315  cat www/index.php
+  316  systemctl status docker.service
+  318  sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose\nsudo chmod +x /usr/local/bin/docker-compose
+  320  sudo docker container ls
+  321  sudo V
+  322  sudo curl -i http://localhost:5000/api/http://example.com/
+  326  git checkout step5
+  328  cat www/Dockerfile
+  329  cat api/main.py
+  332  sudo docker-compose exec redis redis-cli monitor
+  333  sed -i 's/Link Extractor/Super Link Extractor/g' www/index.php
+  334  git reset --hard
+  336  git checkout step6
+  337  ls
+  338  cat api/linkextractor.rb
+  339  cat api/Dockerfile
+  340  cat docker-compose.yml
+  341  sudo docker-compose up -d --build
+  342  curl -i http://localhost:4567/api/http://example.com/
+  343  tail -f logs/extraction.log
+  344  sudo docker-compose down
+  345  cat logs/extraction.log
+  347  cd ..
+  348  cd Documents
+  349  mkdir DockerPractice
+  350  cd DockerPractice
+  351  echo "# DockerPractice" >> README.md\ngit init\ngit add README.md\ngit commit -m "first commit"\ngit branch -M main\ngit remote add origin git@github.com:teslasteria/DockerPractice.git\ngit push -u origin main
+  352  history --man
+  353  history -h
+  354  history --help
+  355  history
+  356  history -n 10000
+  357  history -man 10000
+  358  --help
+  359  -h
+  360  cd --man
+  361  cd -man
+  362  cd -h
+  363  cd -help
+  364  man history
+  365  help history
+  366  history N 150
